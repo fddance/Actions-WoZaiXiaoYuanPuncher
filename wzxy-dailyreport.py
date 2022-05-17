@@ -260,7 +260,7 @@ class WoZaiXiaoYuanPuncher:
             GOBOT_URL = os.environ["GOBOT_URL"]
             GOBOT_TOKEN = os.environ["GOBOT_TOKEN"]
             GOBOT_QQ = os.environ["GOBOT_QQ"]
-            url = f'{GOBOT_URL}?access_token={GOBOT_TOKEN}&{GOBOT_QQ}&message=⏰ 我在校园打卡结果通知\n---------\n\n打卡项目：健康打卡\n\n打卡情况：{notifyResult}\n\n打卡时间: {notifyTime}'
+            url = f'{GOBOT_URL}?access_token={GOBOT_TOKEN}&{GOBOT_QQ}&message=打卡情况：{notifyResult}\n打卡项目：日检日报\n打卡时段: {notifySeq}\n打卡时间: {notifyTime}'
             r = requests.get(url).json()
             if r["status"] == "ok":
                 print("消息经 go-cqhttp 推送成功！")
