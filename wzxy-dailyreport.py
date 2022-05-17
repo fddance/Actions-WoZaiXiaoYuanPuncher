@@ -241,7 +241,9 @@ class WoZaiXiaoYuanPuncher:
             # }
             msg = {
                 "token": notifyToken,
-                "title": notifySeq + " " + notifyResult,
+                "title": "结果：{}\n\n时段：{}\n\n时间：{}".format(
+                    notifyResult, notifySeq, notifyTime
+                ),
                 "content": content,
                 "template": "json",
             }
