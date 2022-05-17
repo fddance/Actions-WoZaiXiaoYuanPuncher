@@ -223,15 +223,15 @@ class WoZaiXiaoYuanPuncher:
             # pushplus 推送
             url = "http://www.pushplus.plus/send"
             notifyToken = os.environ["PUSHPLUS_TOKEN"]
-            # content = json.dumps(
-            #     {
-            #         "打卡项目": "日检日报",
-            #         "打卡情况": notifyResult,
-            #         "打卡时段": notifySeq,
-            #         "打卡时间": notifyTime,
-            #     },
-            #     ensure_ascii=False,
-            # )
+            content = json.dumps(
+                {
+                    "打卡项目": "日检日报",
+                    "打卡情况": notifyResult,
+                    "打卡时段": notifySeq,
+                    "打卡时间": notifyTime,
+                },
+                ensure_ascii=False,
+            )
             #原本打卡通知，需要点开查看因此修改
             # msg = {
             #     "token": notifyToken,
