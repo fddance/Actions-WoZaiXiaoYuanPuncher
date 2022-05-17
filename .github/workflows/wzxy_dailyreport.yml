@@ -7,8 +7,8 @@ on:
 
   schedule:
   # Github Action 使用世界标准时间（UTC），北京时间（UTC+8）转换为世界标准时需要减去8小时
-    - cron:  '30 3,13,23 * * *' # 默认在每天 UTC 12:30 和 23:30 （北京时间 20:30 和 7:30）执行  
-    #修改执行时间，分别为 7:30,11:30,21:30分执行一次打卡任务，根据作者所说会延迟一个小时左右
+    - cron:  '00 0,4,14 * * *' # 默认在每天 UTC 12:30 和 23:30 （北京时间 20:30 和 7:30）执行  
+    #修改执行时间，分别为 8:00,12:00,22:00分执行一次打卡任务，根据作者所说会延迟一个小时左右
     #学校打卡时间为 7:30-10:00 , 12:00-15:00 , 22:00-23:00
 
 jobs:
@@ -51,6 +51,8 @@ jobs:
         WZXY_TOWNSHIP: ${{secrets.TOWNSHIP}}
         WZXY_STREET: ${{secrets.STREET}}
         WZXY_CITYCODE: ${{secrets.CITYCODE}}
+        GOBOT_URL: http://127.0.0.1/send_private_msg
+        GOBOT_QQ: user_id=2862540609
       run: python wzxy-dailyreport.py
   
   ## 多账户配置示例，请复制下面的代码后取消注释再修改，粘贴时注意缩进
